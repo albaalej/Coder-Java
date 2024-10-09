@@ -52,7 +52,7 @@ public class Clase01 {
 		String nombreCompleto = ("El nombre completo es: ") + primerNombre + " " + segundoNombre + " " +apellido;
 		System.out.println(nombreCompleto);*/
 		
-		
+		s
 		
 		//Crear una variable float para almacenar el peso de una persona.
 		 /* float peso = 10; 
