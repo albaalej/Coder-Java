@@ -3,6 +3,8 @@
 	<name>clase-01</name>
 	<comment></comment>
 	<projects>
+		<project>clase-02</project>
+		<project>clase-04</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

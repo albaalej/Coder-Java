@@ -2,7 +2,7 @@ package com.coderhouse.inicio;
 
 public class Clase01 {
 
-	static float PI = 3.14f;
+	static final float PI = 3.14f;
 	public static void main(String[] args) {
 		
 		/* Ejercicios sobre Variables y Tipos de Variables */
@@ -50,9 +50,9 @@ public class Clase01 {
 		String segundoNombre = "Sebastian";
 		String apellido = "Alba";
 		String nombreCompleto = ("El nombre completo es: ") + primerNombre + " " + segundoNombre + " " +apellido;
-		System.out.println(nombreCompleto);
+		System.out.println(nombreCompleto);*/
 		
-		*/
+		
 		
 		//Crear una variable float para almacenar el peso de una persona.
 		 /* float peso = 10; 
@@ -63,7 +63,7 @@ public class Clase01 {
 		System.out.println(resultado); */
 		
 		//Constantes
-			System.out.println(PI); 
+			//System.out.println(PI); 
 		}
 		
 		
