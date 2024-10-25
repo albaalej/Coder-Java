@@ -5,14 +5,14 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.3.5</version>
+		<version>3.3.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.realetech</groupId>
-	<artifactId>Realetech</artifactId>
+	<groupId>com.coderhouse</groupId>
+	<artifactId>clase-08</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Realetech</name>
-	<description>Sistema Realetech</description>
+	<name>clase-08</name>
+	<description>Primera app en spring</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -54,6 +54,7 @@
 			<artifactId>hibernate-core</artifactId>
 			<version>6.4.4.Final</version>
 		</dependency>
+		
 	</dependencies>
 
 	<build>

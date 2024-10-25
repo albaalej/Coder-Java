@@ -1,10 +1,10 @@
-package com.realetech;
+package com.coderhouse;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RealetechApplicationTests {
+class Clase08ApplicationTests {
 
 	@Test
 	void contextLoads() {
