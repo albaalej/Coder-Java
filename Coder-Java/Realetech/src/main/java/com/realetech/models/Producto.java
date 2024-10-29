@@ -1,8 +1,12 @@
 package com.realetech.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -29,6 +33,9 @@ public class Producto {
 	@Column(name="stock")
 	private Integer stock;
 
+	@OneToMany(mappedBy = "producto")
+    private List<Venta_Detalle> detalles = new ArrayList<>();
+	  
 	//getters y setters
 	public Long getId() {
 		return id;

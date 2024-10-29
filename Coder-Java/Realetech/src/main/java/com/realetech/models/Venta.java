@@ -1,10 +1,17 @@
 package com.realetech.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 
@@ -18,60 +25,41 @@ public class Venta {
 	@Column(name="idCliente")
 	private Integer idCliente;
 	
-	@Column(name="idProducto")
-	private Integer idProducto;
 	
-	@Column(name="precioVentaProducto")
-	private Integer precioVentaProducto;
+	@Column(name="precioVentaTotal")
+	private Integer precioVentaTotal;
 	
 	@Column(name="fechaVenta")
 	private String fechaVenta;
 
-	 
-	public long getId() {
-		return id;
-	}
+	@ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
+	
+	 @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL)
+	 private List<Venta_Detalle> detalles = new ArrayList<>();
+	
+	//Getters y setters
+	public long getId() {return id;}
 
-	public void setId(long id) {
-		this.id = id;
-	}
+	public void setId(long id) {this.id = id;}
 
-	public Integer getIdCliente() {
-		return idCliente;
-	}
+	public Integer getIdCliente() {return idCliente;}
 
-	public void setIdCliente(Integer idCliente) {
-		this.idCliente = idCliente;
-	}
+	public void setIdCliente(Integer idCliente) {this.idCliente = idCliente;}
 
-	public Integer getIdProducto() {
-		return idProducto;
-	}
+	public Integer getPrecioVentaTotal() {return precioVentaTotal;}
 
-	public void setIdProducto(Integer idProducto) {
-		this.idProducto = idProducto;
-	}
+	public void setPrecioVentaTotal(Integer precioVentaTotal) {this.precioVentaTotal = precioVentaTotal;}
 
-	public Integer getPrecioVentaProducto() {
-		return precioVentaProducto;
-	}
+	public String getFechaVenta() {return fechaVenta;}
 
-	public void setPrecioVentaProducto(Integer precioVentaProducto) {
-		this.precioVentaProducto = precioVentaProducto;
-	}
-
-	public String getFechaVenta() {
-		return fechaVenta;
-	}
-
-	public void setFechaVenta(String fechaVenta) {
-		this.fechaVenta = fechaVenta;
-	}
+	public void setFechaVenta(String fechaVenta) {this.fechaVenta = fechaVenta;}
 
 	@Override
 	public String toString() {
-		return "Venta [id=" + id + ", idCliente=" + idCliente + ", idProducto=" + idProducto + ", precioVentaProducto="
-				+ precioVentaProducto + ", fechaVenta=" + fechaVenta + "]";
+		return "Venta [id=" + id + ", idCliente=" + idCliente + ", idProducto=" + ", precioVentaTotal="
+				 + ", fechaVenta=" + fechaVenta + "]";
 	}
 	
 	

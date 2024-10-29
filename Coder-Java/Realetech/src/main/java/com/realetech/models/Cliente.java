@@ -1,5 +1,8 @@
 package com.realetech.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -32,7 +35,9 @@ public class Cliente {
 	@Column(name="mail")
 	private String mail;
 
-	
+	 @OneToMany(mappedBy = "cliente")
+     private List<Venta> ventas = new ArrayList<>();
+	 
 	// GETTERS Y SETERS 
 	public Long getId() {
 		return id;
