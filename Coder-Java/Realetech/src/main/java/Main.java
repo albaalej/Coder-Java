@@ -1,8 +1,6 @@
 
-import com.realetech.objetos.Clientes;
-
 public class Main {
-
+	/*
 	public static void main(String[] args) {
 		Clientes unCliente = new Clientes();
 		
@@ -17,5 +15,5 @@ public class Main {
 		
 		
 	}
-
+*/
 }
