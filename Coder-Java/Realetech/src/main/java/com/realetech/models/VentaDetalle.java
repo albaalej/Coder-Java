@@ -21,11 +21,11 @@ public class VentaDetalle {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@Column
-	private Integer idVentas;
+	//@Column
+	//private Integer idVentas;
 	
-	@Column
-	private Integer idProducto;
+	//@Column
+	//private Integer idProducto;
 	
 	@Column
 	private Integer cantidad;
@@ -44,6 +44,15 @@ public class VentaDetalle {
 			) 
 	
 	private List<Producto> Producto ;
+	
+	@ManyToOne
+	@JoinColumn(name = "Venta")
+	private Venta venta;
+
+	@ManyToOne
+	@JoinColumn(name = "Producto")
+	private Producto producto;
+	
 
 
 	public long getId() {
@@ -55,7 +64,7 @@ public class VentaDetalle {
 		this.id = id;
 	}
 
-
+/*
 	public Integer getIdVentas() {
 		return idVentas;
 	}
@@ -122,6 +131,6 @@ public class VentaDetalle {
 				+ cantidad + ", precioVentaProducto=" + precioVentaProducto + ", Productos=" + Productos + ", Producto="
 				+ Producto + "]";
 	}
-	
+	*/
 	
 }
