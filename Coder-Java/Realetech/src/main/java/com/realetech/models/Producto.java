@@ -43,4 +43,68 @@ public class Producto {
 	@ManyToOne												
 	@JoinColumn(name = "VentaDetalle", nullable = false)		
 	private VentaDetalle VentaDetalle;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public String getMarca() {
+		return marca;
+	}
+
+	public void setMarca(String marca) {
+		this.marca = marca;
+	}
+
+	public Integer getPrecio() {
+		return precio;
+	}
+
+	public void setPrecio(Integer precio) {
+		this.precio = precio;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+	public Integer getStock() {
+		return stock;
+	}
+
+	public void setStock(Integer stock) {
+		this.stock = stock;
+	}
+
+	public VentaDetalle getVentaDetalle() {
+		return VentaDetalle;
+	}
+
+	public void setVentaDetalle(VentaDetalle ventaDetalle) {
+		VentaDetalle = ventaDetalle;
+	}
+
+	@Override
+	public String toString() {
+		return "Producto [id=" + id + ", nombre=" + nombre + ", marca=" + marca + ", precio=" + precio + ", categoria="
+				+ categoria + ", stock=" + stock + ", VentaDetalle=" + VentaDetalle + "]";
+	}
+	
+	
 }

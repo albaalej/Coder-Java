@@ -44,4 +44,84 @@ public class VentaDetalle {
 			) 
 	
 	private List<Producto> Producto ;
+
+
+	public long getId() {
+		return id;
+	}
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+	public Integer getIdVentas() {
+		return idVentas;
+	}
+
+
+	public void setIdVentas(Integer idVentas) {
+		this.idVentas = idVentas;
+	}
+
+
+	public Integer getIdProducto() {
+		return idProducto;
+	}
+
+
+	public void setIdProducto(Integer idProducto) {
+		this.idProducto = idProducto;
+	}
+
+
+	public Integer getCantidad() {
+		return cantidad;
+	}
+
+
+	public void setCantidad(Integer cantidad) {
+		this.cantidad = cantidad;
+	}
+
+
+	public Integer getPrecioVentaProducto() {
+		return precioVentaProducto;
+	}
+
+
+	public void setPrecioVentaProducto(Integer precioVentaProducto) {
+		this.precioVentaProducto = precioVentaProducto;
+	}
+
+
+	public List<Producto> getProductos() {
+		return Productos;
+	}
+
+
+	public void setProductos(List<Producto> productos) {
+		Productos = productos;
+	}
+
+
+	public List<Producto> getProducto() {
+		return Producto;
+	}
+
+
+	public void setProducto(List<Producto> producto) {
+		Producto = producto;
+	}
+
+
+	@Override
+	public String toString() {
+		return "VentaDetalle [id=" + id + ", idVentas=" + idVentas + ", idProducto=" + idProducto + ", cantidad="
+				+ cantidad + ", precioVentaProducto=" + precioVentaProducto + ", Productos=" + Productos + ", Producto="
+				+ Producto + "]";
+	}
+	
+	
 }
