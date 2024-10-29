@@ -64,26 +64,6 @@ public class VentaDetalle {
 		this.id = id;
 	}
 
-/*
-	public Integer getIdVentas() {
-		return idVentas;
-	}
-
-
-	public void setIdVentas(Integer idVentas) {
-		this.idVentas = idVentas;
-	}
-
-
-	public Integer getIdProducto() {
-		return idProducto;
-	}
-
-
-	public void setIdProducto(Integer idProducto) {
-		this.idProducto = idProducto;
-	}
-
 
 	public Integer getCantidad() {
 		return cantidad;
@@ -127,10 +107,10 @@ public class VentaDetalle {
 
 	@Override
 	public String toString() {
-		return "VentaDetalle [id=" + id + ", idVentas=" + idVentas + ", idProducto=" + idProducto + ", cantidad="
+		return "VentaDetalle [id=" + id + ", idVentas="  + ", idProducto="  + ", cantidad="
 				+ cantidad + ", precioVentaProducto=" + precioVentaProducto + ", Productos=" + Productos + ", Producto="
 				+ Producto + "]";
 	}
-	*/
+	
 	
 }
