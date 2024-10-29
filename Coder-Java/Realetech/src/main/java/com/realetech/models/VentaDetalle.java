@@ -53,7 +53,7 @@ public class VentaDetalle {
 	@JoinColumn(name = "Producto")
 	private Producto producto;
 	
-
+	//setters y getters
 
 	public long getId() {
 		return id;

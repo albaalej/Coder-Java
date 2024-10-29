@@ -39,6 +39,7 @@ public class Venta {
 	 @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	    private List<VentaDetalle> detalles = new ArrayList<>();
 
+	 //getters y setters
 	public long getId() {
 		return id;
 	}
