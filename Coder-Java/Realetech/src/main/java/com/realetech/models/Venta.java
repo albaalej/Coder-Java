@@ -36,8 +36,9 @@ public class Venta {
 	@JoinColumn(name = "cliente_id", nullable = false)		
 	private Cliente cliente;
 	
-	 @OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	    private List<VentaDetalle> detalles = new ArrayList<>();
+	@OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<VentaDetalle> detalles = new ArrayList<>();
+
 
 	 //getters y setters
 	public long getId() {

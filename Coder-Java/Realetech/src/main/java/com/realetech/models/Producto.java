@@ -1,6 +1,6 @@
 package com.realetech.models;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -8,8 +8,6 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -40,9 +38,8 @@ public class Producto {
 	@Column
 	private Integer stock;
 	
-	@ManyToOne												
-	@JoinColumn(name = "VentaDetalle", nullable = false)		
-	private VentaDetalle VentaDetalle;
+	  @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	    private List<VentaDetalle> ventasDetalle = new ArrayList<>();
 
 	public Long getId() {
 		return id;
@@ -92,19 +89,14 @@ public class Producto {
 		this.stock = stock;
 	}
 
-	public VentaDetalle getVentaDetalle() {
-		return VentaDetalle;
-	}
-
-	public void setVentaDetalle(VentaDetalle ventaDetalle) {
-		VentaDetalle = ventaDetalle;
-	}
-
 	@Override
 	public String toString() {
 		return "Producto [id=" + id + ", nombre=" + nombre + ", marca=" + marca + ", precio=" + precio + ", categoria="
-				+ categoria + ", stock=" + stock + ", VentaDetalle=" + VentaDetalle + "]";
+				+ categoria + ", stock=" + stock + ", ventasDetalle=" + ventasDetalle + "]";
 	}
+
+
+	
 	
 	
 }

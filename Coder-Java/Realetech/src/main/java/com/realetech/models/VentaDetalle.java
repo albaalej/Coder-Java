@@ -33,25 +33,13 @@ public class VentaDetalle {
 	@Column
 	private Integer precioVentaProducto;
 	
-	@OneToMany(mappedBy = "VentaDetalle", cascade = CascadeType.ALL)
-    private List<Producto> Productos;
-	
-	
-	@OneToMany( 										
-			mappedBy = "VentaDetalle",					
-			cascade = CascadeType.ALL,
-			fetch = FetchType.EAGER
-			) 
-	
-	private List<Producto> Producto ;
-	
-	@ManyToOne
-	@JoinColumn(name = "Venta")
-	private Venta venta;
+	  @ManyToOne
+	    @JoinColumn(name = "venta_id")
+	    private Venta venta;
 
-	@ManyToOne
-	@JoinColumn(name = "Producto")
-	private Producto producto;
+	    @ManyToOne
+	    @JoinColumn(name = "producto_id")
+	    private Producto producto;
 	
 	//setters y getters
 
@@ -85,32 +73,16 @@ public class VentaDetalle {
 	}
 
 
-	public List<Producto> getProductos() {
-		return Productos;
-	}
-
-
-	public void setProductos(List<Producto> productos) {
-		Productos = productos;
-	}
-
-
-	public List<Producto> getProducto() {
-		return Producto;
-	}
-
-
-	public void setProducto(List<Producto> producto) {
-		Producto = producto;
-	}
-
-
 	@Override
 	public String toString() {
-		return "VentaDetalle [id=" + id + ", idVentas="  + ", idProducto="  + ", cantidad="
-				+ cantidad + ", precioVentaProducto=" + precioVentaProducto + ", Productos=" + Productos + ", Producto="
-				+ Producto + "]";
+		return "VentaDetalle [id=" + id + ", cantidad=" + cantidad + ", precioVentaProducto=" + precioVentaProducto
+				+ ", producto=" + producto + "]";
 	}
+
+
+
+
+
 	
 	
 }
