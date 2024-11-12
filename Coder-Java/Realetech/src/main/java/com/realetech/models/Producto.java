@@ -92,9 +92,25 @@ public class Producto {
 	@Override
 	public String toString() {
 		return "Producto [id=" + id + ", nombre=" + nombre + ", marca=" + marca + ", precio=" + precio + ", categoria="
-				+ categoria + ", stock=" + stock + ", ventasDetalle=" + ventasDetalle + "]";
+				+ categoria + ", stock=" + stock + "]";
 	}
 
+	public Producto() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Producto(Long id, String nombre, String marca, Integer precio, String categoria, Integer stock) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.marca = marca;
+		this.precio = precio;
+		this.categoria = categoria;
+		this.stock = stock;
+	}
+
+	
 
 	
 	

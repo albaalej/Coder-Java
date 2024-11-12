@@ -2,6 +2,8 @@ package com.realetech.models;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -36,16 +38,9 @@ public class Cliente {
 	@Column(nullable = false)
 	private String mail;
 	
-	@OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL)
-    private List<Venta> ventas;
-	
-	
-	@OneToMany( 										
-			mappedBy = "cliente",						
-			cascade = CascadeType.ALL,
-			fetch = FetchType.EAGER
-			) 
-	
+
+	@OneToMany(mappedBy = "cliente",cascade = CascadeType.ALL,fetch = FetchType.EAGER) 
+	@JsonIgnore
 	private List<Venta> venta ;
 
 
@@ -108,17 +103,6 @@ public class Cliente {
 		this.mail = mail;
 	}
 
-
-	public List<Venta> getVentas() {
-		return ventas;
-	}
-
-
-	public void setVentas(List<Venta> ventas) {
-		this.ventas = ventas;
-	}
-
-
 	public List<Venta> getVenta() {
 		return venta;
 	}
@@ -132,9 +116,27 @@ public class Cliente {
 	@Override
 	public String toString() {
 		return "Cliente [id=" + id + ", nombre=" + nombre + ", apellido=" + apellido + ", domicilio=" + domicilio
-				+ ", matricula=" + matricula + ", mail=" + mail + ", ventas=" + ventas + ", venta=" + venta + "]";
+				+ ", matricula=" + matricula + ", mail=" + mail + "]";
 	}
-	
+
+
+	public Cliente(Long id, String nombre, String apellido, String domicilio, int matricula, String mail) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.domicilio = domicilio;
+		this.matricula = matricula;
+		this.mail = mail;
+	}
+
+
+	public Cliente() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
 	
 	
 }

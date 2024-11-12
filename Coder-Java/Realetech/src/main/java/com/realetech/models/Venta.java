@@ -2,6 +2,8 @@ package com.realetech.models;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -33,7 +35,8 @@ public class Venta {
 	private String fecha_Venta;
 
 	@ManyToOne												
-	@JoinColumn(name = "cliente_id", nullable = false)		
+	@JoinColumn(name = "cliente_id", nullable = false)	
+	@JsonIgnore
 	private Cliente cliente;
 	
 	@OneToMany(mappedBy = "venta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -77,6 +80,21 @@ public class Venta {
 	public String toString() {
 		return "Venta [id=" + id + ", precio_Venta_Total=" + precio_Venta_Total + ", fecha_Venta=" + fecha_Venta
 				+ ", cliente=" + cliente + "]";
+	}
+
+	public Venta(long id, Integer precio_Venta_Total, String fecha_Venta, Cliente cliente,
+			List<VentaDetalle> detalles) {
+		super();
+		this.id = id;
+		this.precio_Venta_Total = precio_Venta_Total;
+		this.fecha_Venta = fecha_Venta;
+		this.cliente = cliente;
+		this.detalles = detalles;
+	}
+
+	public Venta() {
+		super();
+		// TODO Auto-generated constructor stub
 	}
 
 

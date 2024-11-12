@@ -80,6 +80,22 @@ public class VentaDetalle {
 	}
 
 
+	public VentaDetalle(long id, Integer cantidad, Integer precioVentaProducto, Venta venta, Producto producto) {
+		super();
+		this.id = id;
+		this.cantidad = cantidad;
+		this.precioVentaProducto = precioVentaProducto;
+		this.venta = venta;
+		this.producto = producto;
+	}
+
+
+	public VentaDetalle() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+ 
+
 
 
 
