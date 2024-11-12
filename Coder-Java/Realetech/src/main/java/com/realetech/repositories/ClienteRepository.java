@@ -6,4 +6,6 @@ import com.realetech.models.Cliente;
 
 public interface ClienteRepository extends JpaRepository<Cliente, Long>  {
 
+	Cliente findByMatricula(int matricula);
+
 }

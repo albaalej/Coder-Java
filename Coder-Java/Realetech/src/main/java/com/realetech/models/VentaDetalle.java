@@ -19,7 +19,7 @@ import jakarta.persistence.Table;
 public class VentaDetalle {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
+	private Long id;
 	
 	//@Column
 	//private Integer idVentas;
