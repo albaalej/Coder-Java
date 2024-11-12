@@ -42,16 +42,6 @@ public class ClientesController {
 	 		return clienteRepository.save(cliente);
 	 	}
 	 	
-	 	@PutMapping("/{id}")														// Modificar cliente
-	     public ResponseEntity<Cliente> updateClienteById(@PathVariable Long id, @RequestBody Cliente clienteDetails) {
-	         try {
-	             Cliente updatedCliente = clienteService.updateCliente(id, clienteDetails);
-	             return ResponseEntity.ok(updatedCliente);
-	         } catch (IllegalArgumentException e) {
-	 			return ResponseEntity.notFound().build();
-	         } catch (Exception e) {
-	             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-	         }
-	     }
+	 
 }
 	 
