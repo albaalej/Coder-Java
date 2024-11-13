@@ -24,6 +24,8 @@ public class ClientesController {
 	 @Autowired
 	 private ClienteService clienteService;
 	 
+	 
+	 // LISTO TODOS LOS CLIENTES
 	 @GetMapping
 	 public ResponseEntity<List<Cliente>> getAllClientes(){
 		 try {
@@ -34,6 +36,7 @@ public class ClientesController {
 		 }
 	 }
 	 
+	 // CLIENTE POR ID
 	 @GetMapping("/{id}")
 	 public ResponseEntity<Cliente> getClienteById(@PathVariable long id){
 		try {
@@ -46,17 +49,7 @@ public class ClientesController {
 		 } 
 	} 
 	 
-	 @PostMapping
-	 public ResponseEntity<Cliente> createCliente(@RequestBody Cliente cliente){
-		try {
-			Cliente createdCliente = clienteService.saveCliente(cliente);
-			return ResponseEntity.ok(createdCliente);	
-		} catch(Exception e) {
-			 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-		 } 
-		 
-	 }
-	 
+	// MODIFICO CLIENTE	 
 	 @PutMapping("/{id}")
 	 public ResponseEntity<Cliente> updateClienteById(@PathVariable Long id, @RequestBody Cliente clienteDetails){
 		 try {
@@ -68,7 +61,20 @@ public class ClientesController {
 				 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
 		 } 
 	 }		 			 
-			 
+	
+	 //AGREGAR CLIENTE
+	 @PostMapping
+	 public ResponseEntity<Cliente> createCliente(@RequestBody Cliente cliente){
+		try {
+			Cliente createdCliente = clienteService.saveCliente(cliente);
+			return ResponseEntity.ok(createdCliente);	
+		} catch(Exception e) {
+			 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+		 } 
+		 
+	 }
+	 
+	 //ELIMINO CLIENTE
 	@DeleteMapping("/{id}")	
 	public ResponseEntity<Void> deleteClienteById(@PathVariable Long id){
 			try {

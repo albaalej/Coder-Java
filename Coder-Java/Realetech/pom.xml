@@ -64,8 +64,8 @@
 		</dependency>
 
 		<dependency>
-			<groupId>com.facturacion</groupId>
-			<artifactId>ventaOnline</artifactId>
+			<groupId>com.Realetech</groupId>
+			<artifactId>Realetech</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
