@@ -10,7 +10,6 @@ import com.realetech.repositories.ClienteRepository;
 import jakarta.transaction.Transactional;
 
 @Service
-
 public class ClienteService {
 	@Autowired
 	 private ClienteRepository clienteRepository;
@@ -21,8 +20,7 @@ public class ClienteService {
 	 }
 	 
 	 public Cliente findById(Long id) {
-		 return clienteRepository.findById(id)
-				 .orElseThrow(() -> new IllegalArgumentException("Cliente no encontrado.") ); 
+		 return clienteRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Cliente no encontrado.") ); 
 	 }
 	 
 	 @Transactional
